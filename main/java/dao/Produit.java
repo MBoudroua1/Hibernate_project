@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Produits")
+@Table(name = "Produit")
 public class Produit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,38 @@ public class Produit implements Serializable {
     private double price;
     private int quantity;
 
+    public Long getReference() {
+        return reference;
+    }
+
+    public void setReference(Long reference) {
+        this.reference = reference;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public Produit(String designation, double price, int quantity) {
         this.designation = designation;
         this.price = price;
@@ -22,7 +54,8 @@ public class Produit implements Serializable {
     }
 
     public Produit() {
-        // getters and setters
-    }
+
+    }// getters and setters
+
 
 }
